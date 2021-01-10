@@ -7,67 +7,68 @@
     android:layout_height="wrap_content"
     android:scaleX="1"
     android:scaleY="1"
-    tools:context=".LocActivity">
+    tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/forestbtn"
+        android:id="@+id/greybtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
         android:layout_marginTop="152dp"
         android:background="#00FFFFFF"
-        android:contentDescription="forest button"
+        android:contentDescription="grey button"
+        android:cropToPadding="false"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/forest" />
+        app:srcCompat="@drawable/grey" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="51dp"
         android:layout_height="18dp"
-        android:layout_marginStart="176dp"
+        android:layout_marginStart="184dp"
         android:layout_marginTop="264dp"
-        android:text="Forest"
+        android:text="Grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/feederbtn"
+        android:id="@+id/bluebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="432dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:background="#00FFFFFF"
-        android:contentDescription="feeder button"
+        android:contentDescription="blue button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/feeder" />
+        app:srcCompat="@drawable/blue" />
 
     <ImageButton
-        android:id="@+id/parkbtn"
+        android:id="@+id/purplebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="128dp"
         android:layout_marginTop="432dp"
         android:background="#00FFFFFF"
-        android:contentDescription="park button"
+        android:contentDescription="purple button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/park" />
+        app:srcCompat="@drawable/purple" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="39dp"
         android:layout_height="0dp"
-        android:layout_marginStart="176dp"
+        android:layout_marginStart="184dp"
         android:layout_marginTop="408dp"
-        android:text="Lake"
+        android:text="Pink"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -88,9 +89,9 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="548dp"
-        android:text="River"
+        android:text="Green"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -98,9 +99,9 @@
         android:id="@+id/textView3"
         android:layout_width="85dp"
         android:layout_height="18dp"
-        android:layout_marginStart="288dp"
+        android:layout_marginStart="292dp"
         android:layout_marginTop="264dp"
-        android:text="Marsh"
+        android:text="Black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,40 +112,40 @@
         android:layout_marginStart="128dp"
         android:layout_marginTop="292dp"
         android:background="#00FFFFFF"
-        android:contentDescription="lake button"
+        android:contentDescription="pink button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lake" />
+        app:srcCompat="@drawable/pink"/>
 
     <ImageButton
-        android:id="@+id/riverbtn"
+        android:id="@+id/greenbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="432dp"
         android:background="#00FFFFFF"
-        android:contentDescription="river button"
+        android:contentDescription="green button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/river" />
+        app:srcCompat="@drawable/green" />
 
     <ImageButton
-        android:id="@+id/yardbtn"
+        android:id="@+id/yellowbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="292dp"
         android:background="#00FFFFFF"
-        android:contentDescription="yard button"
+        android:contentDescription="yellow button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/yard" />
+        app:srcCompat="@drawable/yellow" />
 
     <TextView
         android:id="@+id/textView7"
@@ -152,43 +153,43 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="296dp"
         android:layout_marginTop="408dp"
-        android:text="Tree"
+        android:text="Red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="36dp"
-        android:layout_height="17dp"
+        android:layout_width="42dp"
+        android:layout_height="18dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="408dp"
-        android:text="Yard"
+        android:text="Yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/treebtn"
+        android:id="@+id/redbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="240dp"
         android:layout_marginTop="292dp"
         android:background="#00FFFFFF"
-        android:contentDescription="tree button"
+        android:contentDescription="red button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/tree" />
+        app:srcCompat="@drawable/red" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="548dp"
         android:scaleX="1"
         android:scaleY="1"
-        android:text="Park"
+        android:text="Purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -205,52 +206,52 @@
         app:srcCompat="@drawable/r_arrow" />
 
     <ImageButton
-        android:id="@+id/marshbtn"
+        android:id="@+id/blackbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="236dp"
-        android:layout_marginTop="149dp"
+        android:layout_marginTop="151dp"
         android:background="#00FFFFFF"
-        android:contentDescription="marsh button"
+        android:contentDescription="black button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/marshes" />
+        app:srcCompat="@drawable/black" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="288dp"
+        android:layout_marginStart="297dp"
         android:layout_marginTop="548dp"
-        android:text="Feeder"
+        android:text="Blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/shorebtn"
+        android:id="@+id/whitebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="152dp"
         android:background="#00FFFFFF"
-        android:contentDescription="shore button"
+        android:contentDescription="white button"
         android:scaleX="0.7"
         android:scaleY="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/shore" />
+        app:srcCompat="@drawable/white" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="264dp"
-        android:text="Shore"
+        android:text="White"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -274,8 +275,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
         android:layout_marginEnd="100dp"
-        android:text="Where did you see the bird?"
+        android:text="What colour was the bird?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>

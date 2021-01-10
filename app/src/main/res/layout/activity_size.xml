@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/locationpg"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:scaleX="1"
+    android:scaleY="1"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/smallbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="172dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="small button"
+        android:cropToPadding="false"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:tint="#658EC7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/small" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="51dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="204dp"
+        android:text="Small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/medbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:layout_marginEnd="168dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="medium button"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:tint="#658EC7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/medium" />
+
+    <ImageButton
+        android:id="@+id/hugebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="448dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="huge button"
+        android:scaleX="1"
+        android:scaleY="1"
+        android:tint="#658EC7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/huge" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="293dp"
+        android:text="Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backarw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="535dp"
+        android:layout_marginEnd="256dp"
+        android:contentDescription="back arrow"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/l_arrow" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="85dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginTop="556dp"
+        android:text="Huge"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/bigbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="328dp"
+        android:background="#00FFFFFF"
+        android:contentDescription="big button"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
+        android:tint="#658EC7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/big" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="412dp"
+        android:text="Big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/forwardarw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="535dp"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/r_arrow" />
+
+    <ImageView
+        android:id="@+id/questionpic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="124dp"
+        android:contentDescription="question icon"
+        android:scaleX="0.7"
+        android:scaleY="0.7"
+        android:tint="#658EC7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/question" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="117dp"
+        android:text="How big was the bird?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
