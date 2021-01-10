@@ -47,26 +47,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Table Create Statements
     private static final String CREATE_TABLE_BIRDS = "CREATE TABLE " + TABLE_BIRDS +
-            "(" + CNAME + " VARCHAR NOT NULL PRIMARY KEY," +
+            " (" + CNAME + " VARCHAR NOT NULL PRIMARY KEY," +
             SNAME + " VARCHAR," +
             SIZE + " VARCHAR," +
             FUNFACT + " VARCHAR," +
             HABITAT + " VARCHAR,"+
             SIZERANGE + " VARCHAR," +
             DIET + " VARCHAR," +
-            APPEARANCE + " VARCHAR" + ")";
+            APPEARANCE + " VARCHAR" + ");";
 
     private static final String CREATE_TABLE_BIRDCOLOURS = "CREATE TABLE " + TABLE_BIRDCOLOURS +
             "(" + CNAME + " VARCHAR NOT NULL," +
             COLOUR + " VARCHAR NOT NULL," +
             "PRIMARY KEY (" + CNAME + "," + COLOUR + ")"
-            + ")";
+            + ");";
 
     private static final String CREATE_TABLE_BIRDLOCS = "CREATE TABLE " + TABLE_BIRDLOCS +
             "(" + CNAME + " VARCHAR NOT NULL," +
             LOC + " VARCHAR NOT NULL," +
             "PRIMARY KEY (" + CNAME + "," + LOC + ")"
-            + ")";
+            + ");";
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -77,9 +77,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // creating required tables
     @Override
     public void onCreate(SQLiteDatabase db) {
+        System.out.println("hello from dbhelper");
         db.execSQL(CREATE_TABLE_BIRDS);
         db.execSQL(CREATE_TABLE_BIRDCOLOURS);
         db.execSQL(CREATE_TABLE_BIRDLOCS);
+
         DatabaseHelper dbHelper = new DatabaseHelper(context);
         db = dbHelper.getWritableDatabase();
         try {
@@ -177,6 +179,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return birds;
+    }
+
+    public Cursor getListOfBirdsV2() {
+        String query = "select * from Birds";
+        Log.e(TAG, query);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        return c;
     }
 
     // get all birds
