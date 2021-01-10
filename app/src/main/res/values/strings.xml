@@ -2,4 +2,28 @@
     <string name="app_name">GoBird BC</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
+
+    <string-array name="birddirectory">
+        <item>Song sparrow</item>
+        <item>Mallard</item>
+        <item>Mew gull</item>
+        <item>Black-capped chickadee</item>
+        <item>Northwestern crow</item>
+        <item>Blue jay</item>
+        <item>Glaucous-winged gull</item>
+        <item>Bald eagle</item>
+        <item>Bushtit</item>
+        <item>Dark-eyed junco</item>
+        <item>Harlequin duck</item>
+        <item>Great blue heron</item>
+        <item>Double-crested cormorant</item>
+        <item>Annas hummingbird</item>
+        <item>Sandhill crane</item>
+        <item>Canada goose</item>
+        <item>Great horned owl</item>
+        <item>Barred Owl</item>
+        <item>Pacific Loon</item>
+        <item>Fork-tailed Storm-Petrel</item>
+        <item>American White Pelican</item>
+    </string-array>
 </resources>

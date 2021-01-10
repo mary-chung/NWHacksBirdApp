@@ -17,4 +17,12 @@ public class BirdLoc {
     public String getLoc() {
         return loc;
     }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public void setLoc(String loc) {
+        this.loc = loc;
+    }
 }
