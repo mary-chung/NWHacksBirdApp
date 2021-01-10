@@ -8,33 +8,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
+public class Result extends AppCompatActivity {
 
-    DatabaseHelper dbHelper;
-
-    Button btn_add, btn_viewAll;
-//    EditText et_name, et_
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_result);
 
-        ImageButton BirdIDBtn = (ImageButton)findViewById(R.id.BirdIDBtn);
-        BirdIDBtn.setOnClickListener(new View.OnClickListener() {
+        Button ReBirdIDBtn = (Button)findViewById(R.id.ReBirdIDBtn);
+        ReBirdIDBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(),LocActivity.class);
                 startActivity(startIntent);
             }
         });
-//the code below is just to test if the button from result to find another bird works
-        ImageButton BirdexBtn = (ImageButton)findViewById(R.id.BirdexBtn);
-        BirdexBtn.setOnClickListener(new View.OnClickListener() {
+
+        ImageButton HomeBtn = (ImageButton)findViewById(R.id.HomeBtn);
+        HomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(),Result.class);
+                Intent startIntent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(startIntent);
             }
         });
+
     }
 }
