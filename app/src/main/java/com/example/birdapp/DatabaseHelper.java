@@ -6,9 +6,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     // credit to http://www.androidhive.info/2013/09/android-sqlite-database-with-multiple-tables/
     // for the tutorial on creating a database
+
+
+    private Context context;
+
     // database specs
     private static final String TAG = "DatabaseHelper";
     private static final int DATABASE_VERSION = 1;
@@ -33,7 +42,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     // Table Create Statements
-    // Todo table create statement
     private static final String CREATE_TABLE_BIRDS = "CREATE TABLE " + TABLE_BIRDS +
             "(" + CNAME + " VARCHAR NOT NULL PRIMARY KEY," +
             SNAME + " VARCHAR," +
@@ -44,15 +52,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             DIET + " VARCHAR," +
             APPEARANCE + " VARCHAR" + ")";
 
-    // Tag table create statement
     private static final String CREATE_TABLE_BIRDCOLOURS = "CREATE TABLE " + TABLE_BIRDCOLOURS +
             "(" + CNAME + " VARCHAR NOT NULL," +
             COLOUR + " VARCHAR NOT NULL," +
             "PRIMARY KEY (" + CNAME + "," + COLOUR + ")"
             + ")";
 
-
-    // todo_tag table create statement
     private static final String CREATE_TABLE_BIRDLOCS = "CREATE TABLE " + TABLE_BIRDLOCS +
             "(" + CNAME + " VARCHAR NOT NULL," +
             LOC + " VARCHAR NOT NULL," +
@@ -60,21 +65,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + ")";
 
 
-
-
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
+    // creating required tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // creating required tables
         db.execSQL(CREATE_TABLE_BIRDS);
         db.execSQL(CREATE_TABLE_BIRDCOLOURS);
         db.execSQL(CREATE_TABLE_BIRDLOCS);
-
+        DatabaseHelper dbHelper = new DatabaseHelper(context);
+        db = dbHelper.getWritableDatabase();
+        try {
+            insertFromFile(context, 180002, db);
+            insertFromFile(context, 180001, db);
+            insertFromFile(context, 180000, db);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
+    // updating tables
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // update tables
@@ -83,4 +96,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BIRDLOCS);
         onCreate(db);
     }
+
+    // method that populates a table from sql script.
+    // source:
+    // https://stackoverflow.com/questions/8199138/android-how-to-exec-a-sql-file-in-sqlitedatabase
+    public int insertFromFile(Context context, int resourceId, SQLiteDatabase db) throws IOException {
+        // Resetting Counter
+        int result = 0;
+        // Open the resource:
+        // bird_colours.sql =    1800000
+        // bird_locs.sql =       1800001
+        // bird_colours.sql =    1800002
+        InputStream insertsStream = context.getResources().openRawResource(resourceId);
+        BufferedReader insertReader = new BufferedReader(new InputStreamReader(insertsStream));
+
+        // Iterate through lines (assuming each insert has its own line and theres no other stuff)
+        while (insertReader.ready()) {
+            String insertStmt = insertReader.readLine();
+            db.execSQL(insertStmt);
+            result++;
+        }
+        insertReader.close();
+
+        // returning number of inserted rows
+        return result;
+    }
+
 }
