@@ -1,8 +1,10 @@
 package com.example.birdapp;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -10,6 +12,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     // credit to http://www.androidhive.info/2013/09/android-sqlite-database-with-multiple-tables/
@@ -123,4 +127,57 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
+    // returns list of birds (bird tuples from database)
+    // credit: https://www.androidhive.info/2013/09/android-sqlite-database-with-multiple-tables/
+    public List<Bird> getListOfBirds(String c1, String c2, String l, String s) {
+        List<Bird> birds = new ArrayList<Bird>();
+
+        String query1 = "select * " +
+                        "from Birds B " +
+                        "where B.cname in ";
+
+        String query2 = "(select BC1.cname " +
+                        "from BirdColours BC1 " +
+                        "where BC1.colour = " + c1 + " ";
+
+        String query3 = "intersect " +
+                        "select BC2.cname " +
+                        "from BirdColours BC2 " +
+                        "where BC2.colour = " + c2 + ") ";
+
+        String query4 = "and B.cname in " +
+                        "(select BL.cname " +
+                        "from BirdLocs BL " +
+                        "where BL.loc = " + l + ") ";
+
+        String query5 = "and B.size = " + s;
+
+        String query = query1 + query2 + query3 + query4 + query5;
+        Log.e(TAG, query);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+
+        // looping through all rows and adding to list
+        if (c.moveToFirst()) {
+            do {
+                Bird b = new Bird();
+                b.setCname(c.getString((c.getColumnIndex(CNAME))));
+                b.setSname((c.getString(c.getColumnIndex(SNAME))));
+                b.setSize(c.getString(c.getColumnIndex(SIZE)));
+                b.setFunfact(c.getString((c.getColumnIndex(FUNFACT))));
+                b.setHabitat((c.getString(c.getColumnIndex(HABITAT))));
+                b.setSizerange(c.getString(c.getColumnIndex(SIZERANGE)));
+                b.setDiet(c.getString((c.getColumnIndex(DIET))));
+                b.setAppearance((c.getString(c.getColumnIndex(APPEARANCE))));
+
+                // adding to birds list
+                birds.add(b);
+            } while (c.moveToNext());
+        }
+
+        return birds;
+
+    }
 }

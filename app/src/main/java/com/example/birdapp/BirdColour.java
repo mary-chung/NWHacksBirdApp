@@ -17,4 +17,12 @@ public class BirdColour {
     public String getColour() {
         return colour;
     }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public void setColour(String colour) {
+        this.colour = colour;
+    }
 }
