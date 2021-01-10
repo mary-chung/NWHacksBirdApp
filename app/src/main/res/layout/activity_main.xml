@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".MainActivity"/>
-=======
+    android:contentDescription="@string/button_send"
     tools:context=".MainActivity">
 
     <TextView
@@ -121,4 +119,4 @@
         app:srcCompat="@drawable/streamline_icon_wild_bird_nest_140x140" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> b76493e9941401323231e92be11a3a9958ec2a6d
+<!--&gt;>>>>>> b76493e9941401323231e92be11a3a9958ec2a6d-->

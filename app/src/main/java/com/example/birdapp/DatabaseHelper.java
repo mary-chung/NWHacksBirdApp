@@ -119,6 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertReader.close();
 
         // returning number of inserted rows
+        System.out.println(result);
         return result;
     }
 
