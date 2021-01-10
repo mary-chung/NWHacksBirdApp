@@ -77,7 +77,7 @@
         app:srcCompat="@drawable/streamline_icon_style_one_pin_question_140x140" />
 
     <ImageButton
-        android:id="@+id/imageView3"
+        android:id="@+id/DirectoryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"

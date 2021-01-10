@@ -27,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        ImageButton DirectoryBtn = (ImageButton)findViewById(R.id.DirectoryBtn);
+        DirectoryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(),Directory.class);
+                startActivity(startIntent);
+            }
+        });
 //the code below is just to test if the button from result to find another bird works
         ImageButton BirdexBtn = (ImageButton)findViewById(R.id.BirdexBtn);
         BirdexBtn.setOnClickListener(new View.OnClickListener() {
