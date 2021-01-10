@@ -127,9 +127,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    // returns list of birds (bird tuples from database)
+    // returns list of birds from questionnaire(bird tuples from database)
     // credit: https://www.androidhive.info/2013/09/android-sqlite-database-with-multiple-tables/
-    public List<Bird> getListOfBirds(String c1, String c2, String l, String s) {
+    public List<Bird> executeQuizBirds(String c1, String c2, String l, String s) {
         List<Bird> birds = new ArrayList<Bird>();
 
         String query1 = "select * " +
@@ -158,7 +158,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
 
-
         // looping through all rows and adding to list
         if (c.moveToFirst()) {
             do {
@@ -178,6 +177,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         return birds;
+    }
 
+    // get all birds
+    public List<Bird> getListOfBirds(String c1, String c2, String l, String s) {
+        List<Bird> birds = new ArrayList<Bird>();
+
+        String query = "select * from Birds";
+        Log.e(TAG, query);
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+
+        // looping through all rows and adding to list
+        if (c.moveToFirst()) {
+            do {
+                Bird b = new Bird();
+                b.setCname(c.getString((c.getColumnIndex(CNAME))));
+                b.setSname((c.getString(c.getColumnIndex(SNAME))));
+                b.setSize(c.getString(c.getColumnIndex(SIZE)));
+                b.setFunfact(c.getString((c.getColumnIndex(FUNFACT))));
+                b.setHabitat((c.getString(c.getColumnIndex(HABITAT))));
+                b.setSizerange(c.getString(c.getColumnIndex(SIZERANGE)));
+                b.setDiet(c.getString((c.getColumnIndex(DIET))));
+                b.setAppearance((c.getString(c.getColumnIndex(APPEARANCE))));
+
+                // adding to birds list
+                birds.add(b);
+            } while (c.moveToNext());
+        }
+        return birds;
     }
 }
