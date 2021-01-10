@@ -264,6 +264,7 @@
         android:contentDescription="question icon"
         android:scaleX="0.7"
         android:scaleY="0.7"
+        android:tint="#658EC7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/question" />
