@@ -12,6 +12,9 @@
         <activity android:name=".Directory"></activity>
         <activity android:name=".Result" />
         <activity android:name=".LocActivity" />
+        <activity android:name=".ColActivity"/>
+        <activity android:name=".SizeActivity"/>
+        <activity android:name=".ResultActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

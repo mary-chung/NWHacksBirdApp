@@ -3,21 +3,20 @@ package com.example.birdapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ColActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ArrayList colours = new ArrayList();
+    private ArrayList colours;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        colours = new ArrayList();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_col);
 
@@ -25,7 +24,7 @@ public class ColActivity extends AppCompatActivity implements View.OnClickListen
         ImageButton BlackBtn = (ImageButton)findViewById(R.id.blackbtn);
         ImageButton GreyBtn = (ImageButton)findViewById(R.id.greybtn);
         ImageButton YellowBtn = (ImageButton)findViewById(R.id.yellowbtn);
-        ImageButton PinkBtn = (ImageButton)findViewById(R.id.pinkbtn);
+        ImageButton PinkBtn = (ImageButton)findViewById(R.id.lakebtn);
         ImageButton RedBtn = (ImageButton)findViewById(R.id.redbtn);
         ImageButton GreenBtn = (ImageButton)findViewById(R.id.greenbtn);
         ImageButton PurpleBtn = (ImageButton)findViewById(R.id.purplebtn);
@@ -65,7 +64,7 @@ public class ColActivity extends AppCompatActivity implements View.OnClickListen
                     colours.add("yellow");
                     v.setEnabled(false);
                     break;
-                case R.id.pinkbtn:
+                case R.id.lakebtn:
                     colours.add("pink");
                     v.setEnabled(false);
                     break;
@@ -86,10 +85,14 @@ public class ColActivity extends AppCompatActivity implements View.OnClickListen
                     v.setEnabled(false);
                     break;
                 case R.id.forwardarw:
-                    Intent startIntent = new Intent(ColActivity.this, Directory.class);
+                    Questionnaire.getInstance().setColours(colours);
+                    Intent startIntent = new Intent(ColActivity.this, SizeActivity.class);
                     startActivity(startIntent);
                     break;
             }
         }
+        Questionnaire.getInstance().setColours(colours);
+        Intent startIntent = new Intent(ColActivity.this, SizeActivity.class);
+        startActivity(startIntent);
     }
 }
